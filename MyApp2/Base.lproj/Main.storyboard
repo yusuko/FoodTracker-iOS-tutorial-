@@ -37,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="66.5" width="50" height="30"/>
                                         <state key="normal" title="Default"/>
                                         <connections>
-                                            <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rGM-h4-eEC"/>
+                                            <action selector="setDefaulLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpD-UZ-ssQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -56,7 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="mealNameLabel" destination="JGQ-sa-qgO" id="ONv-Gf-v5s"/>
-                        <outlet property="nameTextField" destination="JGQ-sa-qgO" id="mX6-aZ-mv3"/>
+                        <outlet property="nameTextField" destination="Ymn-FW-BDa" id="cJI-aC-W8Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
