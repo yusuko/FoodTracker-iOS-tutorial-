@@ -40,7 +40,7 @@
                                             <action selector="setDefaulLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpD-UZ-ssQ"/>
                                         </connections>
                                     </button>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-GF-EVs">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-GF-EVs">
                                         <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PjG-GF-EVs" secondAttribute="height" multiplier="1:1" id="2le-8a-fyb"/>
@@ -70,4 +70,7 @@
             <point key="canvasLocation" x="-14" y="74"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="defaultPhoto" width="320" height="320"/>
+    </resources>
 </document>
