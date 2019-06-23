@@ -18,30 +18,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-1M-qAt">
-                                <rect key="frame" x="20" y="136" width="414" height="476.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-1M-qAt">
+                                <rect key="frame" x="20" y="136" width="414" height="438.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGQ-sa-qgO">
-                                        <rect key="frame" x="0.0" y="0.0" width="37" height="20.5"/>
+                                        <rect key="frame" x="188.5" y="0.0" width="37" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymn-FW-BDa">
-                                        <rect key="frame" x="0.0" y="28.5" width="129" height="30"/>
+                                        <rect key="frame" x="142.5" y="28.5" width="129" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dna-DD-01a">
-                                        <rect key="frame" x="0.0" y="66.5" width="50" height="30"/>
-                                        <state key="normal" title="Default"/>
-                                        <connections>
-                                            <action selector="setDefaulLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpD-UZ-ssQ"/>
-                                        </connections>
-                                    </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="PjG-GF-EVs">
-                                        <rect key="frame" x="0.0" y="104.5" width="320" height="320"/>
+                                        <rect key="frame" x="47" y="66.5" width="320" height="320"/>
                                         <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="PjG-GF-EVs" secondAttribute="height" multiplier="1:1" id="2le-8a-fyb"/>
@@ -51,7 +44,7 @@
                                         </connections>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-xc-SPv" customClass="RatingControl" customModule="MyApp2" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="432.5" width="252" height="44"/>
+                                        <rect key="frame" x="81" y="394.5" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
@@ -79,6 +72,7 @@
                         <outlet property="mealNameLabel" destination="JGQ-sa-qgO" id="ONv-Gf-v5s"/>
                         <outlet property="nameTextField" destination="Ymn-FW-BDa" id="cJI-aC-W8Z"/>
                         <outlet property="photoImageView" destination="PjG-GF-EVs" id="efs-W6-ETB"/>
+                        <outlet property="ratingControl" destination="XfD-xc-SPv" id="bus-sq-yCv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -88,7 +82,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-304" y="-499"/>
+            <point key="canvasLocation" x="-959" y="-502"/>
         </scene>
     </scenes>
     <resources>
