@@ -8,9 +8,19 @@
 
 import UIKit
 
-class RatingControl: UIStackView {
+@IBDesignable class RatingControl: UIStackView {
     //MARK: properties
     private var ratingButtons = [UIButton]()
+    @IBInspectable var starSize: CGSize = CGSize(width: 44.0, height: 44.0) {
+        didSet {
+            setupButtons()
+        }
+    }
+    @IBInspectable var starCount: Int = 5 {
+        didSet {
+            setupButtons()
+        }
+    }
     
     var rating = 0
     
@@ -28,13 +38,20 @@ class RatingControl: UIStackView {
     
     //MARK: private func
     private func setupButtons() {
-        for _ in 0..<5 {
+        // clear any exisiting buttons
+        for button in ratingButtons {
+            removeArrangedSubview(button)
+            button.removeFromSuperview()
+        }
+        ratingButtons.removeAll()
+        
+        for _ in 0..<starCount {
             let button = UIButton()
             button.backgroundColor = UIColor.red
             // Add constatins
             button.translatesAutoresizingMaskIntoConstraints = false
-            button.heightAnchor.constraint(equalToConstant: 44.0).isActive = true
-            button.widthAnchor.constraint(equalToConstant: 44.0).isActive = true
+            button.heightAnchor.constraint(equalToConstant: starSize.width).isActive = true
+            button.widthAnchor.constraint(equalToConstant: starSize.height).isActive = true
             
             //Add action
             button.addTarget(self, action: #selector (ratingButtonTapped(button: )), for: .touchUpInside)
