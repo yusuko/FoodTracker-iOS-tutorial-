@@ -38,6 +38,12 @@ import UIKit
     
     //MARK: private func
     private func setupButtons() {
+        // Load button images
+        let bundle = Bundle(for: type(of: self))
+        let filedStar = UIImage(named: "filedStar", in: bundle, compatibleWith: self.traitCollection)
+        let emptyStar = UIImage(named: "emptyStar", in: bundle, compatibleWith: self.traitCollection)
+        let highlightedStar = UIImage(named: "highlightedStar", in: bundle, compatibleWith: self.traitCollection)
+        
         // clear any exisiting buttons
         for button in ratingButtons {
             removeArrangedSubview(button)
@@ -47,7 +53,12 @@ import UIKit
         
         for _ in 0..<starCount {
             let button = UIButton()
-            button.backgroundColor = UIColor.red
+            // Set button image
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filedStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
+            
             // Add constatins
             button.translatesAutoresizingMaskIntoConstraints = false
             button.heightAnchor.constraint(equalToConstant: starSize.width).isActive = true
