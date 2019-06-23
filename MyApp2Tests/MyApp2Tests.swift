@@ -10,25 +10,28 @@ import XCTest
 @testable import MyApp2
 
 class MyApp2Tests: XCTestCase {
-
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    // Meal class tests
+    func testMealInitializationSucesseds() {
+        // Zero assertion
+        let zeroRatingMeal = Meal.init(name: "Zero", photo: nil, rating: 0)
+        XCTAssertNotNil(zeroRatingMeal)
+        
+        // Highest assertion
+        let positiveRatingMeal = Meal.init(name: "Five", photo: nil, rating: 5)
+        XCTAssertNotNil(positiveRatingMeal)
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    func testMealInitializationFails() {
+        //NegativeRating
+        let negativeRatingMeal = Meal.init(name: "negative", photo: nil, rating: -1)
+        XCTAssertNil(negativeRatingMeal)
+        
+        // Empty String
+        let emptyRatingMeal = Meal.init(name: "", photo: nil, rating: 0)
+        XCTAssertNil(emptyRatingMeal)
+        
+        // Rating exceeds maximum
+        let largeRatingMeal = Meal.init(name: "Large", photo: nil, rating: 6)
+        XCTAssertNil(largeRatingMeal)
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
