@@ -22,7 +22,11 @@ import UIKit
         }
     }
     
-    var rating = 0
+    var rating: Int = 0 {
+        didSet {
+            updateButtonsSelectionStates()
+        }
+    }
     
     //MARK: Initialization
     
@@ -66,17 +70,37 @@ import UIKit
             
             //Add action
             button.addTarget(self, action: #selector (ratingButtonTapped(button: )), for: .touchUpInside)
-            
             // Add button to stack view
             addArrangedSubview(button)
             
             // Add the new button to the rating button array
             ratingButtons.append(button)
         }
+        updateButtonsSelectionStates()
     }
     
     //MARK: action
     @objc func ratingButtonTapped(button: UIButton) {
-        print("hogehoge")
+        guard let index = ratingButtons.firstIndex(of: button) else {
+            fatalError("The button, \(button), is not in the ratingButtons array: \(ratingButtons)")
+        }
+        
+        // Calculate the rating of the selected button
+        let selectedRating = index + 1
+        
+        if selectedRating == rating {
+            // If the selected star represents the current rating, reset the rating to 0.
+            rating = 0
+        } else {
+            // Otherwise set the rating to the selected star
+            rating = selectedRating
+        }
+    }
+    
+    private func updateButtonsSelectionStates() {
+        for (index, button) in ratingButtons.enumerated() {
+            // If the index of a button is less than the rating, that button should be selected.
+            button.isSelected = index < rating
+        }
     }
 }
