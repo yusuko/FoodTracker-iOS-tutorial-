@@ -60,7 +60,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Your Meals" id="9Cu-EY-jsY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="61G-4L-zgk"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="61G-4L-zgk">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="2F9-i2-WDe"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="44q-bH-jeB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -75,8 +79,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-1M-qAt">
-                                <rect key="frame" x="0.0" y="64" width="414" height="416"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="WEy-1M-qAt">
+                                <rect key="frame" x="0.0" y="108" width="414" height="410"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter meal name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ymn-FW-BDa">
                                         <rect key="frame" x="142.5" y="0.0" width="129" height="30"/>
@@ -94,8 +98,8 @@
                                             <outletCollection property="gestureRecognizers" destination="XAV-fb-XeM" appends="YES" id="2bF-Gr-HNP"/>
                                         </connections>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-xc-SPv" customClass="RatingControl" customModule="MyApp2" customModuleProvider="target">
-                                        <rect key="frame" x="81" y="366" width="252" height="50"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="XfD-xc-SPv" customClass="RatingControl" customModule="MyApp2" customModuleProvider="target">
+                                        <rect key="frame" x="81" y="366" width="252" height="44"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="size" keyPath="starSize">
                                                 <size key="value" width="44" height="44"/>
