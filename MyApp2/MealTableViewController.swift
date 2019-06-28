@@ -102,7 +102,7 @@ class MealTableViewController: UITableViewController {
         guard let meal2 = Meal.init(name: "Banana", photo: photo2, rating: 5) else {
             fatalError("Unable to initiate meal2")
         }
-        guard let meal3 = Meal.init(name: "Apple", photo: photo2, rating: 3) else {
+        guard let meal3 = Meal.init(name: "Apple", photo: photo3, rating: 3) else {
             fatalError("Unable to initiate meal3")
         }
         meals += [meal1, meal2, meal3]
