@@ -27,6 +27,7 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         
         // Handle the text field’s user input through delegate callbacks.
         nameTextField.delegate = self
+        updateSaveButtonState()
     }
     
     //MARK: UITextFieldDelegate
@@ -36,7 +37,14 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         return true
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        //Disable the Save button while editing.
+        saveButton.isEnabled = false
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        updateSaveButtonState()
+        navigationItem.title = textField.text
     }
     
     //MARK: UIImagePickerControllerDelegate
@@ -80,6 +88,12 @@ class MealViewController: UIViewController, UITextFieldDelegate, UIImagePickerCo
         imagePickerContoller.delegate = self
         present(imagePickerContoller, animated: true, completion: nil)
         
+    }
+    
+    //MARK: Private Methods
+    private func updateSaveButtonState() {
+        let text = nameTextField.text ?? ""
+        saveButton.isEnabled = !text.isEmpty
     }
 }
 
