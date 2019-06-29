@@ -124,7 +124,11 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" title="New Meal" id="gej-xc-tiR">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="W2I-v9-rZN"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="W2I-v9-rZN">
+                            <connections>
+                                <action selector="cancel:" destination="BYZ-38-t0r" id="nKe-Am-jJd"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Save" id="ttN-7J-zM2">
                             <connections>
                                 <segue destination="Qz7-rx-gx3" kind="unwind" unwindAction="unwindToMealListWithSender:" id="f81-4x-4A4"/>
